@@ -41,8 +41,8 @@ app.get("/token", async (req, res) => {
     console.error(err.response?.data || err.message);
 
     res.status(500).json({
-      erro: err.response?.data || err.message
-    });
+  erro: err.response?.data || err.message
+});
   }
 });
 
