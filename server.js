@@ -15,7 +15,9 @@ app.get("/", (req, res) => {
 
 app.get("/token", async (req, res) => {
   try {
-    const pfx = fs.readFileSync("./open.pfx");
+    const pfx = fs.readFileSync(
+  process.env.SANTANDER_CERT_PATH || "./open.pfx"
+);
 
     const agent = new https.Agent({
       pfx,
